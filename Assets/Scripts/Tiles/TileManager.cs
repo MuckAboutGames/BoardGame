@@ -25,7 +25,8 @@ public class TileManager : MonoBehaviour
         var randomIndex = UnityEngine.Random.Range(0f, tilePrefabList.Count);
         return tilePrefabList[(int) randomIndex];
     }
-
+    
+    // Negative coordinates are in use to ensure that the tilemap is centered with the camera
     void GenerateWorld()
     {
         for (var x = gridSize * -1; x < gridSize; x++)

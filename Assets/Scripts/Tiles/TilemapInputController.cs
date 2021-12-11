@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,15 @@ using UnityEngine.Tilemaps;
 
 public class TilemapInputController : MonoBehaviour
 {
-
-    [SerializeField] 
     private Grid grid;
-    
-    [SerializeField]
     private Tilemap tilemap;
-    
-    // Update is called once per frame
+
+    private void Start()
+    {
+        grid = gameObject.GetComponentInParent<Grid>();
+        tilemap = gameObject.GetComponent<Tilemap>();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))

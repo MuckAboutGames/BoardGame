@@ -2,15 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum TileType
+{
+    Grass,
+    Desert,
+    Mountain,
+    Town
+}
+
 public class TilePrefabData : MonoBehaviour
 {
-    public enum TileTypes
-    {
-        Grass,
-        Desert,
-        Mountain,
-        Town
-    }
+    [SerializeField]
+    private TileType tileType;
 
-    public TileTypes TileType;
+    // This should not be settable from other scripts, so it's a read-only property
+    public TileType TileType => tileType;
 }
