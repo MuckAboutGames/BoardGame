@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 829654975551027822}
   - component: {fileID: 6825759455903057309}
+  - component: {fileID: 6995364833312448510}
   m_Layer: 0
   m_Name: pTownTile
   m_TagString: Untagged
@@ -82,3 +83,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6995364833312448510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6556808452231743378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1797e63a47be884abbf43eb6d81b4f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TileType: 3

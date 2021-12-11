@@ -6,19 +6,15 @@ using UnityEngine.Tilemaps;
 
 public class TileManager : MonoBehaviour
 {
-    private Tilemap tilemap;
+    [SerializeField]
+    private Tilemap gameTilemap;
     
     [SerializeField] 
     private List<Transform> tilePrefabList;
 
     [SerializeField] 
     private int gridSize;
-    
-    private void Awake()
-    {
-        tilemap = GetComponent<Tilemap>();
-    }
-    
+
     void Start()
     {
         GenerateWorld();
@@ -36,13 +32,15 @@ public class TileManager : MonoBehaviour
         {
             for (var y = gridSize * -1; y < gridSize; y++)
             {
-                Sprite tileSprite = GetRandomTileType().GetComponent<SpriteRenderer>().sprite;
+                Transform randomTileType = GetRandomTileType();
+                
+                Sprite tileSprite = randomTileType.GetComponent<SpriteRenderer>().sprite;
                 Tile tile = ScriptableObject.CreateInstance<Tile>();
                 tile.sprite = tileSprite;
-                tilemap.SetTile(new Vector3Int(x,y,0), tile);
-                tilemap.RefreshAllTiles();
+                tile.gameObject = new GameObject($"{randomTileType.GetComponent<TilePrefabData>().TileType}: {x},{y}");
+                gameTilemap.SetTile(new Vector3Int(x,y,0), tile);
             }
         }
-        
+        gameTilemap.RefreshAllTiles();
     }
 }
