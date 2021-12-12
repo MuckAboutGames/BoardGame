@@ -1,14 +1,10 @@
-# Junkyard Juice
+# Board Game
 
-A game about an addict, a loser, a freak, and a mercenary who band together to defeat a technonecromancer in their village.
+A game that is somewhat like Chutes and Ladders, where the player must traverse the board from one end to the other.
 
 ## Required Software Versions
 
 - Unity 3d version 2020.3.22f1
-
-### Optional:
-
-- Visual Studio Community 2022
 
 ## Contributions
 
